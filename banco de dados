@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string.h>
+#include <math.h>
+#include <fstream>
+#include <string>
+#include <stdlib.h>
+
+using namespace std;
+
+//FUNÇÃO
+int Soma(int x, int y)
+{
+    return (x+y);
+}
+
+int main ()
+{
+     //BANCO DE DADOS
+    const int tamanho = 4;
+    int codigo[tamanho];
+    string nome [tamanho];
+    string tell [tamanho];
+
+    codigo[0] = 24432;
+    nome [0] = "Danilo de Alencastro";
+    tell [0] = "988361659";
+  
+    codigo[1] = 11532;
+    nome [1] = "Heitor Leander";
+    tell [1] = "989021238";
+
+    codigo[2] = 9812;
+    nome [2] = "Nicolle Figueredo";
+    tell [2] = "998261529";
+
+    codigo[3] = 5672;
+    nome [3] = "Andrew Raphael";
+    tell [3] = "998261453";
+
+    ofstream out("C:\\Users\\oggal\\OneDrive\\Área de Trabalho\\bd.txt");
+   // for (int i = 0; i<tamanho; i++)
+    //{
+    //    out << "[" << codigo[i]<< ";" << nome[i] << ";" << tell[i] << "]" << endl;
+    //}
+
+    out.close ();
+
+    //INTERFACE
+    ///CRUD (Incluir, Excluir, Alterar, Pesquisar)
+   int cod = 0;
+   cout << "Escreva o codigo que deseja pesquisar: ";
+   cin >> cod;
+   cout << "\n\n";
+
+   for (size_t i =0; i < tamanho; i++)
+   {
+       if (cod == codigo[i])
+       {
+           cout << "---------------- DADOS DO USUARIO DESEJADO ---------------- \n\n ";
+           cout << codigo[i] << "\n";
+           cout << nome [i] << "\n";
+           cout << tell [i] << "\n";
+       }
+   }
+
+
+}
